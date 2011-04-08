@@ -1,0 +1,1194 @@
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 11:49:05 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 11:49:17 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20110408095153)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("username")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_username_on_uniquetrue" ON "username" ("uniquetrue")[0m
+SQLite3::SQLException: no such table: main.username: CREATE  INDEX "index_username_on_uniquetrue" ON "username" ("uniquetrue")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20110408095153)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_username')[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+SQLite3::SQLException: table users has no column named email: CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20110408095153)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_username')[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110408095153')[0m
+Migrating to CreateNotes (20110408095614)
+  [1m[35mSQL (0.3ms)[0m  CREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110408095614')[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("notes")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_username')
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:00:31 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:00:35 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 6ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:02:21 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:02:26 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 6ms
+
+
+Started GET "/users?ticket=ST-2-fksl03KfftMIVHKPBkfP-cas" for 127.0.0.1 at Fri Apr 08 12:02:45 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-2-fksl03KfftMIVHKPBkfP-cas"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+WARNING: Can't mass-assign protected attributes: username
+WARNING: Can't mass-assign protected attributes: username
+Completed   in 355ms
+
+NoMethodError (undefined method `email' for #<User:0x103805e18>):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (202.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (211.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:03:01 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 5ms
+
+
+Started GET "/users?ticket=ST-3-hQ3AS2wnvksPRdCpq6qg-cas" for 127.0.0.1 at Fri Apr 08 12:03:01 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-3-hQ3AS2wnvksPRdCpq6qg-cas"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: username
+WARNING: Can't mass-assign protected attributes: username
+Completed   in 46ms
+
+NoMethodError (undefined method `email' for #<User:0x1034ac280>):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (267.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (275.7ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateNotes (20110408095614)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.4ms)[0m  [1mDROP TABLE "notes"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110408095614'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_username')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20110408095153)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110408095153'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20110408095153)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110408095153')
+Migrating to CreateNotes (20110408095614)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110408095614')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.8ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("notes")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_username')
+
+
+Started GET "/users" for 127.0.0.1 at Fri Apr 08 12:08:19 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:08:19 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:08:22 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:25 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users?ticket=ST-4-aIHARIYaXFMYjohMa3zk-cas" for 127.0.0.1 at Fri Apr 08 12:08:25 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-4-aIHARIYaXFMYjohMa3zk-cas"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("sign_in_count", "last_sign_in_ip", "updated_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "username", "last_sign_in_at") VALUES (0, NULL, '2011-04-08 10:08:25.810547', '2011-04-08 10:08:25.810547', NULL, NULL, 'joel1di1@gmail.com', NULL)[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "sign_in_count" = 1, "last_sign_in_ip" = '127.0.0.1', "updated_at" = '2011-04-08 10:08:25.817215', "current_sign_in_at" = '2011-04-08 10:08:25.816867', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2011-04-08 10:08:25.816867' WHERE "users"."id" = 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 73ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:08:25 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:32 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:34 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 22ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 12:08:47 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 12:08:47 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 12:08:47 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:54 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:55 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 80ms (Views: 67.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:56 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:56 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 80ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:56 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:57 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:57 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 19ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:57 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 20ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:57 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:57 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:58 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:58 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:58 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:58 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 20ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:59 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:08:59 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 19ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:09:00 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 79ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:09:00 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:09:01 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 79ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:09:03 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:09:04 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:09:05 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:09:05 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:09:05 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:09:09 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 20ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 12:09:18 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to https://localhost:8443/cas/logout?destination=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 9ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:09:39 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:10:28 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:11:22 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:11:41 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (225.1ms)
+Completed   in 231ms
+
+ActionView::Template::Error (undefined method `notes_path_path' for #<#<Class:0x10339ed20>:0x103394be0>):
+    1: <h1>Hy guys</h1>
+    2: 
+    3: <%= link_to("Notes", :notes_path) %>
+  app/views/homes/index.html.erb:3:in `_app_views_homes_index_html_erb__2065512933_2174522120_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (111.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (116.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:11:49 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:11:51 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users?ticket=ST-5-EWCpgL70fH01QvEmIe2e-cas" for 127.0.0.1 at Fri Apr 08 12:12:01 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-5-EWCpgL70fH01QvEmIe2e-cas"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2011-04-08 10:12:01.697073', "sign_in_count" = 2, "updated_at" = '2011-04-08 10:12:01.697526' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:12:01 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:12:04 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+Rendered notes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 12:12:10 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to https://localhost:8443/cas/logout?destination=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 9ms
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 12:12:10 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:26:53 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:26:55 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users?ticket=ST-7-XtY6zpH0sFV5e5GNfBzu-cas" for 127.0.0.1 at Fri Apr 08 12:27:08 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-7-XtY6zpH0sFV5e5GNfBzu-cas"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2011-04-08 10:27:08.997158', "updated_at" = '2011-04-08 10:27:08.997733', "sign_in_count" = 3, "last_sign_in_at" = '2011-04-08 10:12:01.697073' WHERE "users"."id" = 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 38ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 12:27:09 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 12:27:11 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 12:43:57 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 14:53:32 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+Redirected to https://localhost:8443/cas/logout?destination=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 4ms
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 14:53:36 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 14:53:43 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 14:53:44 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users?ticket=ST-1-BPzlEq7mgxcIvkF0NzJY-cas" for 127.0.0.1 at Fri Apr 08 14:53:55 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-1-BPzlEq7mgxcIvkF0NzJY-cas"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE "users" SET "updated_at" = '2011-04-08 12:53:56.201013', "current_sign_in_at" = '2011-04-08 12:53:56.200416', "sign_in_count" = 4, "last_sign_in_at" = '2011-04-08 10:27:08.997158' WHERE "users"."id" = 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 385ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 14:53:56 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 14:53:58 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 14:54:02 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 19ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 15:37:14 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 15:37:33 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 15:37:35 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 20ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 15:37:40 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to https://localhost:8443/cas/logout?destination=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 8ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 15:37:43 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 15:37:44 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 15:37:45 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 15:38:06 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 15:38:43 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:21:12 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 16:21:15 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Fri Apr 08 16:21:19 +0200 2011
+  Processing by Devise::CasSessionsController#create as HTML
+Completed   in 3ms
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 16:21:22 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+Redirected to https://localhost:8443/cas/logout?destination=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 4ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:27:28 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 16:27:30 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users?ticket=ST-2-IEYvHxetBrecdHf0LieJ-cas" for 127.0.0.1 at Fri Apr 08 16:27:35 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-2-IEYvHxetBrecdHf0LieJ-cas"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2011-04-08 14:27:35.775738', "sign_in_count" = 5, "last_sign_in_at" = '2011-04-08 12:53:56.200416', "updated_at" = '2011-04-08 14:27:35.776117' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 62ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:27:35 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 16:27:37 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+Rendered notes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 16:27:41 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to https://localhost:8443/cas/logout?destination=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 9ms
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 16:27:41 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 16:30:40 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 1ms
+
+
+Started GET "/users?ticket=ST-3-Y1GkOJ212myfbc5brBJt-cas" for 127.0.0.1 at Fri Apr 08 16:30:46 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-3-Y1GkOJ212myfbc5brBJt-cas"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "sign_in_count" = 6, "updated_at" = '2011-04-08 14:30:46.751145', "current_sign_in_at" = '2011-04-08 14:30:46.750669', "last_sign_in_at" = '2011-04-08 14:27:35.775738' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 120ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:30:46 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 16:30:51 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to https://localhost:8443/cas/logout?destination=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 10ms
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 16:30:51 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:34:57 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 16:34:59 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users?ticket=ST-4-BEjVQrcoeAIeC5pcYcaP-cas" for 127.0.0.1 at Fri Apr 08 16:35:04 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-4-BEjVQrcoeAIeC5pcYcaP-cas"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2011-04-08 14:35:04.665643', "last_sign_in_at" = '2011-04-08 14:30:46.750669', "sign_in_count" = 7, "updated_at" = '2011-04-08 14:35:04.666351' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 62ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:35:04 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 16:35:06 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to https://localhost:8443/cas/logout?service=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 9ms
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 16:35:06 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:35:06 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 16:35:09 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+Redirected to https://localhost:8443/cas/logout?service=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 3ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:35:09 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 16:35:14 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users?ticket=ST-5-JBaUYtfgDocI6m7mkQel-cas" for 127.0.0.1 at Fri Apr 08 16:35:27 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-5-JBaUYtfgDocI6m7mkQel-cas"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2011-04-08 14:35:27.551139', "sign_in_count" = 8, "updated_at" = '2011-04-08 14:35:27.551618', "last_sign_in_at" = '2011-04-08 14:35:04.665643' WHERE "users"."id" = 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 32ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:35:27 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 16:35:30 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes"
+Rendered notes/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 84ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 16:35:32 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to https://localhost:8443/cas/logout?service=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 9ms
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 16:35:32 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 16:35:32 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 16:35:34 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 2ms
+
+
+Started GET "/users?ticket=ST-6-LQ3swOYIabHg6ySfuyv3-cas" for 127.0.0.1 at Fri Apr 08 18:15:11 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-6-LQ3swOYIabHg6ySfuyv3-cas"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-04-08 14:35:27.551139', "current_sign_in_at" = '2011-04-08 16:15:11.580766', "sign_in_count" = 9, "updated_at" = '2011-04-08 16:15:11.581165' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 103ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:15:11 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 18:15:16 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+Rendered notes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 18:15:23 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to https://localhost:8443/cas/logout?service=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 10ms
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 18:15:23 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:15:23 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:16:00 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 18:16:07 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 4ms
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 18:16:15 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:37:31 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 18:37:33 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 3ms
+
+
+Started GET "/users?ticket=ST-7-9JPHLjWuFVE2GJUUIzhb-cas" for 127.0.0.1 at Fri Apr 08 18:37:43 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-7-9JPHLjWuFVE2GJUUIzhb-cas"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "updated_at" = '2011-04-08 16:37:44.029948', "sign_in_count" = 10, "current_sign_in_at" = '2011-04-08 16:37:44.029580', "last_sign_in_at" = '2011-04-08 16:15:11.580766' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 128ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:37:44 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 18:37:46 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+Rendered notes/index.html.erb within layouts/application (82.8ms)
+Completed 200 OK in 105ms (Views: 89.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 18:37:57 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to https://localhost:8443/cas/logout?service=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 9ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:37:57 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Apr 08 18:37:57 +0200 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Fri Apr 08 18:38:01 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+Redirected to https://localhost:8443/cas/logout?service=http%3A%2F%2Flocalhost%3A3000%2F
+Completed 302 Found in 4ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:38:01 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:43:42 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:43:43 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:43:44 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:43:44 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:43:44 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:43:44 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 18:43:46 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 4ms
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 18:44:05 +0200 2011
+  Processing by NotesController#index as HTML
+Completed   in 101ms
+
+
+Started GET "/users?ticket=ST-8-Hyfz1JsYkNXZZ95hw3xT-cas" for 127.0.0.1 at Fri Apr 08 18:44:10 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-8-Hyfz1JsYkNXZZ95hw3xT-cas"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "updated_at" = '2011-04-08 16:44:10.122225', "current_sign_in_at" = '2011-04-08 16:44:10.121767', "last_sign_in_at" = '2011-04-08 16:37:44.029580', "sign_in_count" = 11 WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Apr 08 18:44:10 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/notes" for 127.0.0.1 at Fri Apr 08 18:44:12 +0200 2011
+  Processing by NotesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mNote Load (0.2ms)[0m  [1mSELECT "notes".* FROM "notes"[0m
+Rendered notes/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 20ms (Views: 9.3ms | ActiveRecord: 0.3ms)
