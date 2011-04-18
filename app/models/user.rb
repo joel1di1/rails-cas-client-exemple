@@ -1,26 +1,19 @@
+require "base64"
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :cas_authenticatable, :trackable
 
+  @ool_user = nil
 
+  def organisation_id
+    ool_user.organisation_id
+  end
 
-  def cas_extra_attributes=(extra_attributes)
-    extra_attributes.each do |name, value|
-      case name.to_sym
-      when :is_admin
-        puts "YESSSSS"
-      when :lastname
-        puts "YESSSSS"
-      when :firstname
-        puts "YESSSSS"
-      end
+  private
+    def ool_user
+      @ool_user ||= OolUser.find(Base64.encode64(username))
     end
-  end
-
-  def account_id
-     ActiveSupport::JSON.decode
-
-  end
 
 end

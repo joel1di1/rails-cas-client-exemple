@@ -814,3 +814,169 @@ Started GET "/" for 127.0.0.1 at Mon Apr 18 11:32:44 +0200 2011
   Processing by HomesController#index as HTML
 Rendered homes/index.html.haml within layouts/application (8.9ms)
 Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:22:31 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Mon Apr 18 19:22:35 +0200 2011
+  Processing by Devise::CasSessionsController#create as HTML
+Completed   in 7ms
+
+
+Started GET "/users?ticket=ST-8-ldr3gAO2NEKxzz39TEdU-cas" for 127.0.0.1 at Mon Apr 18 19:22:44 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-8-ldr3gAO2NEKxzz39TEdU-cas"}
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."username" = 'joel1di1@gmail.com' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2011-04-18 17:22:45.000825', "updated_at" = '2011-04-18 17:22:45.001348', "sign_in_count" = 5, "last_sign_in_at" = '2011-04-18 09:11:20.514393' WHERE "users"."id" = 8[0m
+Redirected to http://localhost:4000/
+Completed 302 Found in 124ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:22:45 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+Rendered homes/index.html.haml within layouts/application (160.2ms)
+Completed   in 169ms
+
+ActionView::Template::Error (expected an attributes Hash, got nil):
+    6:     = current_user.username
+    7:   %p
+    8:     Organisation Id =
+    9:     = current_user.organisation_id
+    10: - else 
+    11:   = link_to("sign in", :new_user_session) 
+    12:   %h1 Public Home
+  app/models/user.rb:30:in `ool_user'
+  app/models/user.rb:25:in `organisation_id'
+  app/views/homes/index.html.haml:9:in `_app_views_homes_index_html_haml___1434898287_2174965700_0'
+
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (227.8ms)
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (238.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:23:50 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+Rendered homes/index.html.haml within layouts/application (62.2ms)
+Completed   in 69ms
+
+ActionView::Template::Error (expected an attributes Hash, got nil):
+    6:     = current_user.username
+    7:   %p
+    8:     Organisation Id :
+    9:     = current_user.organisation_id
+    10: - else 
+    11:   = link_to("sign in", :new_user_session) 
+    12:   %h1 Public Home
+  app/models/user.rb:30:in `ool_user'
+  app/models/user.rb:25:in `organisation_id'
+  app/views/homes/index.html.haml:9:in `_app_views_homes_index_html_haml___1434898287_2170583220_0'
+
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (236.1ms)
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (243.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:23:56 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+Rendered homes/index.html.haml within layouts/application (17.2ms)
+Completed 200 OK in 24ms (Views: 23.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:24:11 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+Rendered homes/index.html.haml within layouts/application (17.3ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:24:25 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+Rendered homes/index.html.haml within layouts/application (358.7ms)
+Completed   in 367ms
+
+ActionView::Template::Error (undefined method `rails' for #<#<Class:0x102be3d88>:0x102be1678>):
+    6:     = current_user.username
+    7:   %p
+    8:     Organisation Id :
+    9:     - rails current_user
+    10:     = current_user
+    11: - else
+    12:   = link_to("sign in", :new_user_session) 
+  app/views/homes/index.html.haml:9:in `_app_views_homes_index_html_haml___1434898287_2170486080_0'
+
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (242.2ms)
+Rendered /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (250.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:32:42 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+Rendered homes/index.html.haml within layouts/application (16.3ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Mon Apr 18 19:35:31 +0200 2011
+  Processing by Devise::CasSessionsController#destroy as HTML
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+Redirected to http://79.125.119.157:8080/cas/logout?service=http%3A%2F%2Flocalhost%3A4000%2F
+Completed 302 Found in 49ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:35:31 +0200 2011
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.haml within layouts/application (14.8ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at Mon Apr 18 19:35:33 +0200 2011
+  Processing by Devise::CasSessionsController#create as HTML
+Completed   in 6ms
+
+
+Started GET "/users?ticket=ST-9-vMphc1g4BvRq2stHfkdl-cas" for 127.0.0.1 at Mon Apr 18 19:36:50 +0200 2011
+  Processing by Devise::CasSessionsController#service as HTML
+  Parameters: {"ticket"=>"ST-9-vMphc1g4BvRq2stHfkdl-cas"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'user@test.com' LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("current_sign_in_at", "last_sign_in_ip", "current_sign_in_ip", "username", "last_sign_in_at", "created_at", "updated_at", "sign_in_count") VALUES (NULL, NULL, NULL, 'user@test.com', NULL, '2011-04-18 17:36:51.278559', '2011-04-18 17:36:51.278559', 0)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2011-04-18 17:36:51.286658', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "last_sign_in_at" = '2011-04-18 17:36:51.286658', "updated_at" = '2011-04-18 17:36:51.287086', "sign_in_count" = 1 WHERE "users"."id" = 10[0m
+Redirected to http://localhost:4000/
+Completed 302 Found in 1090ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:36:51 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 10 LIMIT 1
+Rendered homes/index.html.haml within layouts/application (14.4ms)
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:37:26 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 10 LIMIT 1[0m
+Rendered homes/index.html.haml within layouts/application (187.0ms)
+Completed 200 OK in 197ms (Views: 196.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Apr 18 19:41:57 +0200 2011
+  Processing by HomesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 10 LIMIT 1
+Rendered homes/index.html.haml within layouts/application (60.7ms)
+Completed 200 OK in 72ms (Views: 71.2ms | ActiveRecord: 0.1ms)

@@ -1,3 +1,6 @@
 class OolUser < ActiveResource::Base
-  self.site = "http://api.people.com:3000/"
+  self.site = "http://localhost:3000/"
+  self.element_name = "user"
+  self.format = :json
+
 end
