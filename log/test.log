@@ -1,0 +1,32 @@
+Unable to load home, underlying cause No such file to load -- home 
+
+ /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activesupport-3.0.5/lib/active_support/dependencies.rb:304:in `depend_on'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activesupport-3.0.5/lib/active_support/dependencies.rb:216:in `require_dependency'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:862:in `try_to_load_dependency'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:877:in `require_fixture_classes'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:874:in `each'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:874:in `require_fixture_classes'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:857:in `fixtures'
+./test/test_helper.rb:10
+./test/unit/helpers/homes_helper_test.rb:1:in `require'
+./test/unit/helpers/homes_helper_test.rb:1
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@global/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@global/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@global/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@global/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+Unable to load home, underlying cause No such file to load -- home 
+
+ /Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activesupport-3.0.5/lib/active_support/dependencies.rb:304:in `depend_on'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activesupport-3.0.5/lib/active_support/dependencies.rb:216:in `require_dependency'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:862:in `try_to_load_dependency'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:877:in `require_fixture_classes'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:874:in `each'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:874:in `require_fixture_classes'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@rails-client-exemple/gems/activerecord-3.0.5/lib/active_record/fixtures.rb:857:in `fixtures'
+./test/test_helper.rb:10
+./test/functional/homes_controller_test.rb:1:in `require'
+./test/functional/homes_controller_test.rb:1
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@global/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `load'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@global/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@global/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5:in `each'
+/Users/joel1di1/.rvm/gems/ruby-1.8.7-p330@global/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5

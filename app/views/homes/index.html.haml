@@ -1,0 +1,12 @@
+
+- if user_signed_in?
+  = link_to("sign out", :destroy_user_session)
+  %h1
+    Welcome
+    = current_user.username
+- else 
+  = link_to("sign in", :new_user_session) 
+  %h1 Public Home
+
+
+= link_to("Notes", :notes)

@@ -9,9 +9,11 @@ gem 'devise', '~> 1.1.1'
 
 gem 'devise_cas_authenticatable', :git => 'git@github.com:joel1di1/devise_cas_authenticatable.git'
 
-gem 'rubycas-client', :git => 'git@github.com:joel1di1/rubycas-client.git'
+gem 'rubycas-client', :git => 'git@github.com:joel1di1/rubycas-client'
 
 gem 'sqlite3'
+
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -20,7 +22,7 @@ gem 'sqlite3'
 # gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
+gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Bundle the extra gems:

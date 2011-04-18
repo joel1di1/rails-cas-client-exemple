@@ -14,7 +14,7 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
-  config.cas_base_url = "https://localhost:8443/cas"
+  config.cas_base_url = "http://79.125.119.157:8080/cas"
   config.cas_destination_logout_param_name = "service"
 
   # ==> Configuration for any authentication mechanism
